@@ -1,0 +1,31 @@
+version: "3.8"
+services:
+  db:
+    image: postgres:12.14-alpine
+    container_name: docker_pgdb_squadmakers
+    restart: always
+    ports:
+      - "5432:5432"
+    env_file:
+      - .env
+    volumes:
+      - local_pgdata:/var/lib/postgresql/data
+      # copy the sql script to create tables
+      - ./init.sql:/docker-entrypoint-initdb.d/create_tables.sql
+
+  pgadmin:
+    image: dpage/pgadmin4
+    container_name: pgadmin4_squadmakers
+    restart: always
+    ports:
+      - "5050:80"
+    environment:
+      PGADMIN_DEFAULT_EMAIL: admin@gmail.com
+      PGADMIN_DEFAULT_PASSWORD: rootpassword
+    volumes:
+      - pgadmin-data:/var/lib/pgadmin
+      
+volumes:
+  local_pgdata:
+    driver: local
+  pgadmin-data:

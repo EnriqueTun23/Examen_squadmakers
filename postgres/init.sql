@@ -1,0 +1,5 @@
+DROP TABLE IF EXISTS joker;
+CREATE TABLE joker (
+    id SERIAL PRIMARY KEY,
+    joke_text TEXT NOT NULL
+);
