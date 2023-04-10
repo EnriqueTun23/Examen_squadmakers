@@ -4,7 +4,7 @@ se hizo un pequeño examen con validaciones para chistes, se hizo tanto para la 
 
 ### Pasos 
 
- - Se recomienda levantar un entorno de desarrollo para python
+ - Se recomienda levantar un entorno de desarrollo para python (mi version es la 3.9.10)
  - Se recomienda hacer la instalacion del archivo requirements.txt
 	>  pip install -r requirements.txt
 - Para usar una BD puede usar mongo o postgress
